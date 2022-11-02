@@ -6,14 +6,26 @@ const Root = styled.button({
   padding: 12,
   border: "none",
   backgroundColor: "transparent",
-  transition: "background-color 180ms ease",
   cursor: "pointer",
-  "&:hover": {
-    backgroundColor: "rgba(0, 0, 0, 0.06)",
+  position: "relative",
+  "&::before": {
+    content: '""',
+    borderRadius: "50%",
+    width: "100%",
+    height: "100%",
+    position: "absolute",
+    backgroundColor: "currentcolor",
+    transition: "opacity 180ms ease",
+    opacity: 0,
+    top: 0,
+    left: 0,
   },
-  "&:active": {
-    backgroundColor: "rgba(0, 0, 0, 0.12)",
-    transition: "background-color 0ms ease",
+  "&:hover::before": {
+    opacity: 0.06,
+  },
+  "&:active::before": {
+    opacity: 0.12,
+    transition: "opacity 0ms ease",
   },
 });
 

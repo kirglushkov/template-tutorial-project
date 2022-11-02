@@ -1,7 +1,12 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { Global, Interpolation, Theme } from "@emotion/react";
-import AppBar from "./components/AppBar";
+import AppBar from "./components/AppBar/AppBar";
+import BalanceButton from "./components/BalanceButton";
+import HorizontalScrollList from "./components/HorizontalScrollList";
+import Paragraph from "./components/Paragraph";
+import Cards from "./components/CardsList/Cards";
+import MasonryGrid from "./components/MasonryGrid";
 
 export const APP_MAX_WIDTH = 640;
 
@@ -38,7 +43,17 @@ const App: React.FC = () => {
     <Root>
       <Global styles={globalStyles} />
       <AppBar />
-      <Main>Приложение</Main>
+      <Main>
+        <BalanceButton
+          title={"Это титул"}
+          balance={399}
+          info={"Большая инфа на кнопке"}
+        />
+        <HorizontalScrollList />
+        <Paragraph />
+        <Cards />
+        <MasonryGrid />
+      </Main>
     </Root>
   );
 };
