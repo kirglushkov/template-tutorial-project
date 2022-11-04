@@ -5,17 +5,19 @@ import { APP_MAX_WIDTH } from "../../App";
 import UnstyledIconButton from "./IconButton";
 
 export const APP_BAR_HEIGHT = 56;
+const APP_BAR_WIDTH = 626;
+const PADDING = 16;
 
 const Root = styled.header({
   height: APP_BAR_HEIGHT,
   position: "fixed",
-  paddingLeft: 16,
+  paddingLeft: PADDING,
   zIndex: 1,
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  width: "calc(100% - 16px)",
-  maxWidth: 626,
+  width: `calc(100% - ${PADDING}px)`,
+  maxWidth: APP_BAR_WIDTH,
 });
 
 const Title = styled.h3({
