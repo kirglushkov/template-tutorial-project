@@ -5,7 +5,6 @@ import Card from "./Card";
 type Props = {};
 
 const MainProps = {
-  height: 130,
   flexDirection: "row",
   justifyContent: "center",
   alignItems: "center",

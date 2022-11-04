@@ -4,7 +4,7 @@ import Root from "./Root";
 type Props = {};
 
 const HorizontalScrollList = (props: Props) => {
-  return <Root height={110}>HorizontalList</Root>;
+  return <Root>HorizontalList</Root>;
 };
 
 export default HorizontalScrollList;

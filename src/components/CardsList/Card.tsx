@@ -10,13 +10,14 @@ type Props = {
 
 export const CARD_HEIGHT = 110;
 export const CARD_WIDTH = 90;
+export const CARD_PADDING = 12;
 
 const Root = styled.div<{ color?: string }>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 12px;
+  padding: ${CARD_PADDING}px;
   color: #ffffff;
   width: ${CARD_WIDTH}px;
   height: ${CARD_HEIGHT}px;

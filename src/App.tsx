@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { Global, Interpolation, Theme } from "@emotion/react";
-import AppBar from "./components/AppBar/AppBar";
+import AppBar, { APP_BAR_HEIGHT } from "./components/AppBar/AppBar";
 import BalanceButton from "./components/BalanceButton";
 import HorizontalScrollList from "./components/HorizontalScrollList";
 import Paragraph from "./components/Paragraph";
@@ -22,8 +22,9 @@ const Main = styled.div({
   display: "flex",
   flexDirection: "column",
   padding: "16px 12px",
+  position: "relative",
+  zIndex: 10,
   gap: 16,
-  zIndex: 1,
   borderRadius: 16,
   borderBottomLeftRadius: 0,
   borderBottomRightRadius: 0,
@@ -31,6 +32,8 @@ const Main = styled.div({
   boxShadow:
     "0px 0px 2px rgba(0, 0, 0, 0.08), 0px 4px 16px rgba(0, 0, 0, 0.08)",
 });
+
+const Offset = styled.div({ height: APP_BAR_HEIGHT });
 
 const App: React.FC = () => {
   const globalStyles: Interpolation<Theme> = {
@@ -43,6 +46,7 @@ const App: React.FC = () => {
     <Root>
       <Global styles={globalStyles} />
       <AppBar />
+      <Offset />
       <Main>
         <BalanceButton
           title={"Это титул"}
@@ -51,6 +55,9 @@ const App: React.FC = () => {
         />
         <HorizontalScrollList />
         <Paragraph />
+        <Cards />
+        <Cards />
+        <Cards />
         <Cards />
         <MasonryGrid />
       </Main>
