@@ -14,7 +14,7 @@ const Root = styled.header({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  width: "100%",
+  width: "calc(100% - 16px)",
   maxWidth: 626,
 });
 
