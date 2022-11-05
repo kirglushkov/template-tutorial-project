@@ -7,6 +7,7 @@ import UnstyledIconButton from "./IconButton";
 export const APP_BAR_HEIGHT = 56;
 const APP_BAR_WIDTH = 626;
 const PADDING = 16;
+const Offset = styled.div({ height: APP_BAR_HEIGHT });
 
 const Root = styled.header({
   height: APP_BAR_HEIGHT,
@@ -39,14 +40,17 @@ const IconButton = styled(UnstyledIconButton)({
 
 const AppBar: React.FC = () => {
   return (
-    <Root>
-      <Title>Приложение</Title>
-      <IconsRow>
-        <IconButton>
-          <Icon28SettingsOutline />
-        </IconButton>
-      </IconsRow>
-    </Root>
+    <>
+      <Root>
+        <Title>Приложение</Title>
+        <IconsRow>
+          <IconButton>
+            <Icon28SettingsOutline />
+          </IconButton>
+        </IconsRow>
+      </Root>
+      <Offset />
+    </>
   );
 };
 
