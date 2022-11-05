@@ -1,16 +1,15 @@
 import styled from "@emotion/styled";
 import React from "react";
+import { APP_MAX_WIDTH } from "../App";
 
 type Props = {
   children: React.ReactNode;
-  height: number;
-  flexDirection: string;
-  justifyContent: string;
-  alignItems: string;
+  flexDirection?: string;
+  justifyContent?: string;
+  alignItems?: string;
 };
 
 const StyledMain = styled.div<{
-  height?: number;
   flexDirection?: string;
   alignItems?: string;
   justifyContent?: string;
@@ -21,7 +20,8 @@ const StyledMain = styled.div<{
   align-items: ${(props) => props.alignItems || "center"};
   padding: 12px 8px 12px 12px;
   gap: 12px;
-  height: ${(props) => props.height}px;
+  max-width: ${APP_MAX_WIDTH}px;
+  height: auto;
   background: #ffffff;
   border: 0.5px solid rgba(0, 0, 0, 0.07);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 4px rgba(0, 0, 0, 0.06);

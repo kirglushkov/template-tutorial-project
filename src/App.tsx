@@ -1,12 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { Global, Interpolation, Theme } from "@emotion/react";
-import AppBar from "./components/AppBar/AppBar";
+import AppBar, { APP_BAR_HEIGHT } from "./components/AppBar/AppBar";
 import BalanceButton from "./components/BalanceButton";
-import HorizontalScrollList from "./components/HorizontalScrollList";
-import Paragraph from "./components/Paragraph";
-import Cards from "./components/CardsList/Cards";
-import MasonryGrid from "./components/MasonryGrid";
 
 export const APP_MAX_WIDTH = 640;
 
@@ -22,8 +18,9 @@ const Main = styled.div({
   display: "flex",
   flexDirection: "column",
   padding: "16px 12px",
+  position: "relative",
+  zIndex: 10,
   gap: 16,
-  zIndex: 1,
   borderRadius: 16,
   borderBottomLeftRadius: 0,
   borderBottomRightRadius: 0,
@@ -49,10 +46,6 @@ const App: React.FC = () => {
           balance={399}
           info={"Большая инфа на кнопке"}
         />
-        <HorizontalScrollList />
-        <Paragraph />
-        <Cards />
-        <MasonryGrid />
       </Main>
     </Root>
   );

@@ -1,17 +1,24 @@
 import styled from "@emotion/styled";
 import { Icon28SettingsOutline } from "@vkontakte/icons";
 import React from "react";
+import { APP_MAX_WIDTH } from "../../App";
 import UnstyledIconButton from "./IconButton";
 
-const APP_BAR_HEIGHT = 56;
+export const APP_BAR_HEIGHT = 56;
+const APP_BAR_WIDTH = 626;
+const PADDING = 16;
+const Offset = styled.div({ height: APP_BAR_HEIGHT });
 
 const Root = styled.header({
-  display: "flex",
-  flexDirection: "row",
-  justifyContent: "space-between",
-  alignItems: "center",
   height: APP_BAR_HEIGHT,
-  padding: "0 16px",
+  position: "fixed",
+  paddingLeft: PADDING,
+  zIndex: 1,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  width: `calc(100% - ${PADDING}px)`,
+  maxWidth: APP_BAR_WIDTH,
 });
 
 const Title = styled.h3({
@@ -33,14 +40,17 @@ const IconButton = styled(UnstyledIconButton)({
 
 const AppBar: React.FC = () => {
   return (
-    <Root>
-      <Title>Приложение</Title>
-      <IconsRow>
-        <IconButton>
-          <Icon28SettingsOutline />
-        </IconButton>
-      </IconsRow>
-    </Root>
+    <>
+      <Root>
+        <Title>Приложение</Title>
+        <IconsRow>
+          <IconButton>
+            <Icon28SettingsOutline />
+          </IconButton>
+        </IconsRow>
+      </Root>
+      <Offset />
+    </>
   );
 };
 
